@@ -35,6 +35,7 @@
   <description>Parent POM for Facebook open source java projects that should be distributed through the central Maven repository using oss.sonatype.org</description>
 
   <url>https://developers.facebook.com/opensource/</url>
+  <inceptionYear>2012</inceptionYear>
 
   <licenses>
     <license>
@@ -200,8 +201,9 @@
                   <!-- junit repackages hamcrest into its own jar, which is a big no-no.
                        junit-dep fixes this problem -->
                   <exclude>junit:junit</exclude>
-                  <!-- completely and utterly broken -->
-                  <exclude>org.weakref:jmxutils:(,1.11]</exclude>
+		  <!-- use guava -->
+                  <exclude>com.google.collections:google-collections</exclude>
+
                   <!-- Contains duplicate classes of the the jsr305 jar,
                        but because they are annotations, they will confuse the
                        dependency checker into submissions. Blacklist the 
@@ -316,6 +318,7 @@
             <target>${project.build.targetJdk}</target>
             <encoding>${project.build.sourceEncoding}</encoding>
             <maxmemory>${fb.build.jvmsize}</maxmemory>
+            <additionalparam>-quiet</additionalparam>
           </configuration>
           <executions>
             <execution>
@@ -459,7 +462,7 @@
               </exception>
             </exceptions>
             <ignoredResources combine.children="append">
-              <ignoredResource>*\.html</ignoredResource>
+              <ignoredResource>.*\.html</ignoredResource>
               <ignoredResource>META-INF/.*</ignoredResource>
               <ignoredResource>about_files/.*</ignoredResource>
               <ignoredResource>plugin\.properties</ignoredResource>
@@ -544,10 +547,15 @@
           <groupId>com.mycila.maven-license-plugin</groupId>
           <artifactId>maven-license-plugin</artifactId>
           <version>1.10.b1</version>
-          <inherited>true</inherited>
           <configuration>
             <skip>${fb.check.skip-license}</skip>
             <header>${fb.main.basedir}/src/license/LICENSE-HEADER.txt</header>
+            <mapping>
+              <java>SLASHSTAR_STYLE</java>
+            </mapping>
+	    <properties>
+              <year>${project.inceptionYear}</year>
+	    </properties>
             <strictCheck>true</strictCheck>
             <aggregate>true</aggregate>
             <useDefaultExcludes>true</useDefaultExcludes>
@@ -564,7 +572,7 @@
             </excludes>
             <includes>
               <include>src/**</include>
-              <include>pom.xml</include>
+              <include>**/pom.xml</include>
             </includes>
           </configuration>
           <executions>
