@@ -570,6 +570,14 @@ limitations under the License.
 	    <properties>
               <year>${project.inceptionYear}</year>
 	    </properties>
+	    <headerSections>
+	      <headerSection>
+		<key>COPYRIGHT_SECTION</key>
+		<defaultValue>Copyright (C) ${project.inceptionYear} Facebook, Inc.</defaultValue>
+		<ensureMatch>Copyright \(C\) \d{4} .+</ensureMatch>
+		<multiLineMatch>false</multiLineMatch>
+	      </headerSection>
+	    </headerSections>
             <strictCheck>true</strictCheck>
             <aggregate>true</aggregate>
             <useDefaultExcludes>true</useDefaultExcludes>
@@ -582,6 +590,8 @@ limitations under the License.
               <exclude>**/*.thrift</exclude>
               <exclude>**/*.g</exclude>
               <exclude>**/*.releaseBackup</exclude>
+              <exclude>**/*.st</exclude>
+	      <exclude>**/src/license/**.txt</exclude>
             </excludes>
             <includes>
               <include>src/**</include>
