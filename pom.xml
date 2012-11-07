@@ -214,12 +214,12 @@
                   <exclude>junit:junit</exclude>
 		  <!-- use guava -->
                   <exclude>com.google.collections:google-collections</exclude>
-
-                  <!-- Contains duplicate classes of the the jsr305 jar,
-                       but because they are annotations, they will confuse the
-                       dependency checker into submissions. Blacklist the 
-                       <exclude>com.google.code.findbugs:annotations</exclude>
-		  -->
+                  <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
+		  <!-- as a dependency then clashes with the dependency checker (because it   -->
+		  <!-- is not very good at handling annotations). Use the annotations jar     -->
+		  <!-- instead which has all jsr305 annotations and the additional findbugs   -->
+		  <!-- stuff. -->
+                  <exclude>com.google.code.findbugs:jsr305</exclude>
                 </excludes>
               </bannedDependencies>
               <requireMavenVersion>
@@ -819,11 +819,6 @@
       </dependency>
 
       <!-- findbugs -->
-      <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>jsr305</artifactId>
-        <version>2.0.1</version>
-      </dependency>
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
