@@ -49,13 +49,13 @@
   <scm>
     <connection>scm:git:git://github.com/facebook/facebook-oss-pom.git</connection>
     <developerConnection>scm:git:git@github.com:facebook/facebook-oss-pom.git</developerConnection>
-    <url>http://github.com/facebook/facebook-oss-pom</url>
+    <url>https://github.com/facebook/facebook-oss-pom</url>
     <tag>HEAD</tag>
   </scm>
 
   <organization>
     <name>Facebook, Inc.</name>
-    <url>http://www.facebook.com/</url>
+    <url>https://www.facebook.com/</url>
   </organization>
 
   <developers>
