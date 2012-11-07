@@ -106,6 +106,8 @@ limitations under the License.
 
     <!-- Dependency versions that should be the same everywhere. -->
     <dep.guice.version>3.0</dep.guice.version>
+    <dep.slf4j.version>1.7.2</dep.slf4j.version>
+    <dep.logback.version>1.0.7</dep.logback.version>
   </properties>
 
   <prerequisites>
@@ -734,57 +736,62 @@ limitations under the License.
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-jcl</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-jdk14</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-nop</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-ext</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>jcl-over-slf4j</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>jul-to-slf4j</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>log4j-over-slf4j</artifactId>
-        <version>1.7.2</version>
+        <version>${dep.slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>${dep.logback.version}</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.0.7</version>
+        <version>${dep.logback.version}</version>
       </dependency>
       <dependency>
         <groupId>log4j</groupId>
