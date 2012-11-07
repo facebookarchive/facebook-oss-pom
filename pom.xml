@@ -471,12 +471,13 @@
                   <package>org.apache.commons.beanutils</package>
                 </packages>
               </exception>
-            </exceptions>
+	    </exceptions>
             <ignoredResources combine.children="append">
               <ignoredResource>.*\.html</ignoredResource>
               <ignoredResource>META-INF/.*</ignoredResource>
               <ignoredResource>about_files/.*</ignoredResource>
               <ignoredResource>plugin\.properties</ignoredResource>
+              <ignoredResource>.*\.java</ignoredResource>
             </ignoredResources>
           </configuration>
         </plugin>
