@@ -88,6 +88,15 @@
     <fb.check.skip-pmd>${fb.check.skip-all}</fb.check.skip-pmd>
     <fb.check.skip-license>${fb.check.skip-all}</fb.check.skip-license>
 
+    <fb.check.fail-all>true</fb.check.fail-all>
+    <fb.check.fail-enforcer>${fb.check.fail-all}</fb.check.fail-enforcer>
+    <fb.check.fail-dependency>${fb.check.fail-all}</fb.check.fail-dependency>
+    <fb.check.fail-duplicate-finder>${fb.check.fail-all}</fb.check.fail-duplicate-finder>
+    <fb.check.fail-dependency-version-check>${fb.check.fail-all}</fb.check.fail-dependency-version-check>
+    <fb.check.fail-findbugs>${fb.check.fail-all}</fb.check.fail-findbugs>
+    <fb.check.fail-pmd>${fb.check.fail-all}</fb.check.fail-pmd>
+    <fb.check.fail-license>${fb.check.fail-all}</fb.check.fail-license>
+
     <!-- the current "best" version of maven -->
     <fb.maven.version>3.0.4</fb.maven.version>
 
@@ -189,6 +198,8 @@
           </executions>
           <configuration>
             <skip>${fb.check.skip-enforcer}</skip>
+	    <fail>${fb.check.fail-enforcer}</fail>
+	    <failFast>false</failFast>
             <rules>
 	      <!-- The following dependencies are hazardous for builds. -->
               <bannedDependencies>
@@ -227,7 +238,7 @@
           <version>2.5.1</version>
           <configuration>
             <skip>${fb.check.skip-dependency}</skip>
-            <failOnWarning>true</failOnWarning>
+            <failOnWarning>${fb.check.fail-dependency}</failOnWarning>
             <ignoreNonCompile>true</ignoreNonCompile>
           </configuration>
           <executions>
@@ -420,7 +431,7 @@
           </executions>
           <configuration>
             <skip>${fb.check.skip-duplicate-finder}</skip>
-            <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
+            <failBuildInCaseOfConflict>${fb.check.fail-duplicate-finder}</failBuildInCaseOfConflict>
             <exceptions combine.children="append">
 	      <!-- Well done, Apache... -->
               <exception>
@@ -476,8 +487,8 @@
           <version>2.0.2</version>
           <configuration>
             <skip>${fb.check.skip-dependency-version-check}</skip>
-            <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
-            <failOnWarning>true</failOnWarning>
+            <failBuildInCaseOfConflict>${fb.check.fail-dependency-version-check}</failBuildInCaseOfConflict>
+            <failOnWarning>${fb.check.fail-dependency-version-check}</failOnWarning>
           </configuration>
           <executions>
             <execution>
@@ -497,7 +508,7 @@
           <configuration>
             <skip>${fb.check.skip-findbugs}</skip>
             <jvmargs>-Xmx${fb.build.jvmsize}</jvmargs>
-            <failOnError>true</failOnError>
+            <failOnError>${fb.check.fail-findbugs}</failOnError>
           </configuration>
           <executions>
             <execution>
@@ -516,6 +527,7 @@
           <version>2.7.1</version>
           <configuration>
             <skip>${fb.check.skip-pmd}</skip>
+	    <failOnViolation>${fb.check.fail-pmd}</failOnViolation>
             <targetJdk>${project.build.targetJdk}</targetJdk>
             <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
             <minimumTokens>100</minimumTokens>
@@ -549,6 +561,7 @@
           <version>1.10.b1</version>
           <configuration>
             <skip>${fb.check.skip-license}</skip>
+            <failIfMissing>${fb.check.fail-license}</failIfMissing>
             <header>${fb.main.basedir}/src/license/LICENSE-HEADER.txt</header>
             <mapping>
               <java>SLASHSTAR_STYLE</java>
@@ -559,7 +572,6 @@
             <strictCheck>true</strictCheck>
             <aggregate>true</aggregate>
             <useDefaultExcludes>true</useDefaultExcludes>
-            <failIfMissing>true</failIfMissing>
             <encoding>${project.build.sourceEncoding}</encoding>
             <excludes>
               <exclude>.*/**</exclude>
