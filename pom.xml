@@ -912,11 +912,10 @@ limitations under the License.
         <artifactId>junit-dep</artifactId>
         <version>4.10</version>
       </dependency>
-      <!-- this is locked to 6.2.1 because of  http://youtrack.jetbrains.com/issue/IDEA-83438 -->
       <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
-        <version>6.2.1</version>
+        <version>6.8</version>
         <exclusions>
           <exclusion>
             <groupId>junit</groupId>
