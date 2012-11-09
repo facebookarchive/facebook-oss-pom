@@ -105,6 +105,13 @@ limitations under the License.
     <!-- See http://stackoverflow.com/questions/1012402/maven2-property-that-indicates-the-parent-directory    -->
     <fb.main.basedir>${project.basedir}</fb.main.basedir>
 
+    <!-- Plugin versions used in multiple places -->
+    <dep.plugin.surefire.version>2.12.4</dep.plugin.surefire.version>
+    <dep.plugin.site.version>3.2</dep.plugin.site.version>
+    <dep.plugin.pmd.version>2.7.1</dep.plugin.pmd.version>
+    <dep.plugin.findbugs.version>2.5.2</dep.plugin.findbugs.version>
+    <dep.plugin.cobertura.version>2.5.2</dep.plugin.cobertura.version>
+
     <!-- Dependency versions that should be the same everywhere. -->
     <dep.guice.version>3.0</dep.guice.version>
     <dep.slf4j.version>1.7.2</dep.slf4j.version>
@@ -299,7 +306,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.12.4</version>
+          <version>${dep.plugin.surefire.version}</version>
           <configuration>
             <systemPropertyVariables combine.children="append">
               <file.encoding>${project.build.sourceEncoding}</file.encoding>
@@ -508,7 +515,7 @@ limitations under the License.
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
-          <version>2.5.2</version>
+          <version>${dep.plugin.findbugs.version}</version>
           <configuration>
             <skip>${fb.check.skip-findbugs}</skip>
             <jvmargs>-Xmx${fb.build.jvmsize}</jvmargs>
@@ -528,7 +535,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>2.7.1</version>
+          <version>${dep.plugin.pmd.version}</version>
           <configuration>
             <skip>${fb.check.skip-pmd}</skip>
             <failOnViolation>${fb.check.fail-pmd}</failOnViolation>
@@ -656,8 +663,8 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.2</version>
-	</plugin>
+          <version>${dep.plugin.site.version}</version>
+        </plugin>
       </plugins>
     </pluginManagement>
 
@@ -699,6 +706,38 @@ limitations under the License.
       </plugin>
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.6</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>${dep.plugin.surefire.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>${dep.plugin.pmd.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>${dep.plugin.findbugs.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>${dep.plugin.cobertura.version}</version>
+      </plugin>
+    </plugins>
+  </reporting>
+
+
 
   <!-- The following dependency should be the same everywhere. -->
   <dependencyManagement>
