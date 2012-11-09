@@ -17,8 +17,8 @@ limitations under the License.
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -162,8 +162,8 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-plugin</artifactId>
-          <version>1.8</version>
-	  <configuration>
+          <version>1.8.1</version>
+          <configuration>
             <connectionType>developerConnection</connectionType>
           </configuration>
         </plugin>
@@ -201,10 +201,10 @@ limitations under the License.
           </executions>
           <configuration>
             <skip>${fb.check.skip-enforcer}</skip>
-	    <fail>${fb.check.fail-enforcer}</fail>
-	    <failFast>false</failFast>
+            <fail>${fb.check.fail-enforcer}</fail>
+            <failFast>false</failFast>
             <rules>
-	      <!-- The following dependencies are hazardous for builds. -->
+              <!-- The following dependencies are hazardous for builds. -->
               <bannedDependencies>
                 <!-- See http://www.sonatype.com/people/2007/06/how-to-merge-sub-items-from-parent-pom-to-child-pom-in-a-maven-plugin-configuration-2/ for details... -->
                 <excludes combine.children="append">
@@ -215,13 +215,13 @@ limitations under the License.
                   <!-- junit repackages hamcrest into its own jar, which is a big no-no.
                        junit-dep fixes this problem -->
                   <exclude>junit:junit</exclude>
-		  <!-- use guava -->
+                  <!-- use guava -->
                   <exclude>com.google.collections:google-collections</exclude>
                   <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
-		  <!-- as a dependency then clashes with the dependency checker (because it   -->
-		  <!-- is not very good at handling annotations). Use the annotations jar     -->
-		  <!-- instead which has all jsr305 annotations and the additional findbugs   -->
-		  <!-- stuff. -->
+                  <!-- as a dependency then clashes with the dependency checker (because it   -->
+                  <!-- is not very good at handling annotations). Use the annotations jar     -->
+                  <!-- instead which has all jsr305 annotations and the additional findbugs   -->
+                  <!-- stuff. -->
                   <exclude>com.google.code.findbugs:jsr305</exclude>
                 </excludes>
               </bannedDependencies>
@@ -345,9 +345,9 @@ limitations under the License.
           </executions>
         </plugin>
 
-	<!-- the mavanagaiata plugin provides information from a git build
-	     to the generated artifacts -->
-	<plugin>
+        <!-- the mavanagaiata plugin provides information from a git build
+             to the generated artifacts -->
+        <plugin>
           <groupId>com.github.koraktor</groupId>
           <artifactId>mavanagaiata</artifactId>
           <version>0.3.4</version>
@@ -382,16 +382,16 @@ limitations under the License.
             </execution>
           </executions>
           <configuration>
-	    <!-- do not build an empty jar if the project is 
-	         e.g. a pom project -->
+            <!-- do not build an empty jar if the project is
+                 e.g. a pom project -->
             <skipIfEmpty>true</skipIfEmpty>
             <archive>
               <manifest>
                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-		<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                 <addClasspath>false</addClasspath>
               </manifest>
-	      <manifestEntries>
+              <manifestEntries>
                 <!-- override Implementation-Version to include git commit info -->
                 <!-- (requires mavanagaiata plugin) -->
                 <Implementation-Version>
@@ -436,7 +436,7 @@ limitations under the License.
             <skip>${fb.check.skip-duplicate-finder}</skip>
             <failBuildInCaseOfConflict>${fb.check.fail-duplicate-finder}</failBuildInCaseOfConflict>
             <exceptions combine.children="append">
-	      <!-- Well done, Apache... -->
+              <!-- Well done, Apache... -->
               <exception>
                 <conflictingDependencies>
                   <dependency>
@@ -474,7 +474,7 @@ limitations under the License.
                   <package>org.apache.commons.beanutils</package>
                 </packages>
               </exception>
-	    </exceptions>
+            </exceptions>
             <ignoredResources combine.children="append">
               <ignoredResource>.*\.html</ignoredResource>
               <ignoredResource>META-INF/.*</ignoredResource>
@@ -531,7 +531,7 @@ limitations under the License.
           <version>2.7.1</version>
           <configuration>
             <skip>${fb.check.skip-pmd}</skip>
-	    <failOnViolation>${fb.check.fail-pmd}</failOnViolation>
+            <failOnViolation>${fb.check.fail-pmd}</failOnViolation>
             <targetJdk>${project.build.targetJdk}</targetJdk>
             <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
             <minimumTokens>100</minimumTokens>
@@ -570,17 +570,17 @@ limitations under the License.
             <mapping>
               <java>SLASHSTAR_STYLE</java>
             </mapping>
-	    <properties>
+            <properties>
               <year>${project.inceptionYear}</year>
-	    </properties>
-	    <headerSections>
-	      <headerSection>
-		<key>COPYRIGHT_SECTION</key>
-		<defaultValue>Copyright (C) ${project.inceptionYear} Facebook, Inc.</defaultValue>
-		<ensureMatch>Copyright \(C\) \d{4} .+</ensureMatch>
-		<multiLineMatch>false</multiLineMatch>
-	      </headerSection>
-	    </headerSections>
+            </properties>
+            <headerSections>
+              <headerSection>
+                <key>COPYRIGHT_SECTION</key>
+                <defaultValue>Copyright (C) ${project.inceptionYear} Facebook, Inc.</defaultValue>
+                <ensureMatch>Copyright \(C\) \d{4} .+</ensureMatch>
+                <multiLineMatch>false</multiLineMatch>
+              </headerSection>
+            </headerSections>
             <strictCheck>true</strictCheck>
             <aggregate>true</aggregate>
             <useDefaultExcludes>true</useDefaultExcludes>
@@ -594,7 +594,7 @@ limitations under the License.
               <exclude>**/*.g</exclude>
               <exclude>**/*.releaseBackup</exclude>
               <exclude>**/*.st</exclude>
-	      <exclude>**/src/license/**.txt</exclude>
+              <exclude>**/src/license/**.txt</exclude>
             </excludes>
             <includes>
               <include>src/**</include>
@@ -931,46 +931,46 @@ limitations under the License.
     <profile>
       <id>check-build-basic</id>
       <build>
-	<plugins>
-	  <plugin>
+        <plugins>
+          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
-	  </plugin>
+          </plugin>
 
-	  <plugin>
+          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
-	  </plugin>
+          </plugin>
 
-	  <plugin>
+          <plugin>
             <groupId>com.ning.maven.plugins</groupId>
             <artifactId>maven-dependency-versions-check-plugin</artifactId>
-	  </plugin>
-	  
-	  <plugin>
+          </plugin>
+
+          <plugin>
             <groupId>com.ning.maven.plugins</groupId>
             <artifactId>maven-duplicate-finder-plugin</artifactId>
-	  </plugin>
-	</plugins>
+          </plugin>
+        </plugins>
       </build>
     </profile>
 
-    <!-- This profile runs the extended checkers. It will be run when an artifact is deployed so 
+    <!-- This profile runs the extended checkers. It will be run when an artifact is deployed so
          having it activated all the time is probably a good idea.
     -->
     <profile>
       <id>check-build-extended</id>
       <build>
-	<plugins>
-	  <plugin>
+        <plugins>
+          <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>findbugs-maven-plugin</artifactId>
-	  </plugin>
-	  
-	  <plugin>
+          </plugin>
+
+          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-pmd-plugin</artifactId>
-	  </plugin>
+          </plugin>
 
           <plugin>
             <groupId>com.mycila.maven-license-plugin</groupId>
