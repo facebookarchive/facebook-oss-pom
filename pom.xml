@@ -359,8 +359,8 @@ limitations under the License.
           <artifactId>mavanagaiata</artifactId>
           <version>0.3.4</version>
           <configuration>
-            <!-- use ISO-8601 timestamps -->
-            <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+            <!-- use a grepable timestamp format -->
+            <dateFormat>yyyyMMddHHmmssZ</dateFormat>
           </configuration>
           <executions>
             <execution>
@@ -676,6 +676,11 @@ limitations under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>com.github.koraktor</groupId>
+        <artifactId>mavanagaiata</artifactId>
       </plugin>
 
       <plugin>
