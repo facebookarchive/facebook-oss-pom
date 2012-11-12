@@ -690,7 +690,7 @@ limitations under the License.
 	  <artifactId>site-maven-plugin</artifactId>
 	  <version>0.7</version>
 	  <configuration>
-	    <message>Creating site for ${project.artifactId}, ${project.version}</message>
+	    <message>Deploying site for ${project.artifactId}, ${project.version}</message>
 	    <!-- this does the trick to place every module in the correct subfolder -->
 	    <!-- see https://github.com/github/maven-plugins/issues/22 -->
 	    <path>${project.artifactId}</path>
