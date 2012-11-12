@@ -695,16 +695,17 @@ limitations under the License.
 	    <!-- see https://github.com/github/maven-plugins/issues/22 -->
 	    <path>${project.artifactId}</path>
 	    <merge>true</merge>
+	    <noJekyll>true</noJekyll>
 	  </configuration>
-	  <executions>
-	    <execution>
-	      <id>default</id>
-	      <goals>
-		<goal>site</goal>
-	      </goals>
-	      <phase>site-deploy</phase>
-	    </execution>
-	  </executions>
+          <executions>
+            <execution>
+              <id>default</id>
+              <phase>site-deploy</phase>
+              <goals>
+                <goal>site</goal>
+              </goals>
+            </execution>
+          </executions>
 	</plugin>
       </plugins>
     </pluginManagement>
