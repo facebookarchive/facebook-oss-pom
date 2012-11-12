@@ -34,7 +34,7 @@ limitations under the License.
   <name>facebook-oss-pom</name>
   <description>Parent POM for Facebook open source java projects that should be distributed through the central Maven repository using oss.sonatype.org</description>
 
-  <url>https://developers.facebook.com/opensource/</url>
+  <url>https://facebook.github.com/${project.artifactId}</url>
   <inceptionYear>2012</inceptionYear>
 
   <licenses>
@@ -47,16 +47,16 @@ limitations under the License.
   </licenses>
 
   <scm>
-    <connection>scm:git:git://github.com/facebook/facebook-oss-pom.git</connection>
-    <developerConnection>scm:git:git@github.com:facebook/facebook-oss-pom.git</developerConnection>
-    <url>https://github.com/facebook/facebook-oss-pom</url>
+    <connection>scm:git:git://github.com/facebook/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:facebook/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/facebook/${project.artifactId}</url>
     <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
     <site>
       <id>github-project-site</id>
-      <url>gitsite:git@github.com/facebook/facebook-oss-pom</url>
+      <url>gitsite:git@github.com/facebook/${project.artifactId}.git</url>
     </site>
   </distributionManagement>
 
