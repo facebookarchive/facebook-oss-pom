@@ -78,6 +78,8 @@ limitations under the License.
     <!-- see http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.targetJdk>1.7</project.build.targetJdk>
+    <project.report.outputEncoding>UTF-8</project.report.outputEncoding>
+    <project.report.inputEncoding>UTF-8</project.report.inputEncoding>
 
     <!-- Facebook build specific options are prefixed fb.build. -->
 
@@ -119,6 +121,7 @@ limitations under the License.
     <dep.plugin.findbugs.version>2.5.2</dep.plugin.findbugs.version>
     <dep.plugin.jacoco.version>0.6.0.201210061924</dep.plugin.jacoco.version>
     <dep.plugin.scm.version>1.8.1</dep.plugin.scm.version>
+    <dep.plugin.javadoc.version>2.9</dep.plugin.javadoc.version>
 
     <!-- Dependency versions that should be the same everywhere. -->
     <dep.guice.version>3.0</dep.guice.version>
@@ -373,7 +376,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.9</version>
+          <version>${dep.plugin.javadoc.version}</version>
           <configuration>
             <source>${project.build.targetJdk}</source>
             <target>${project.build.targetJdk}</target>
@@ -641,6 +644,8 @@ limitations under the License.
               <exclude>**/*.g</exclude>
               <exclude>**/*.releaseBackup</exclude>
               <exclude>**/*.st</exclude>
+              <exclude>**/*.raw</exclude>
+              <exclude>**/*.ser</exclude>
               <exclude>**/src/license/**.txt</exclude>
             </excludes>
             <includes>
@@ -757,16 +762,67 @@ limitations under the License.
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>2.6</version>
+        <reportSets>
+          <reportSet>
+            <id>default</id>
+            <reports>
+              <report>dependencies</report>
+              <report>dependency-convergence</report>
+              <report>dependency-info</report>
+              <report>dependency-management</report>
+              <report>distribution-management</report>
+              <report>index</report>
+              <report>license</report>
+              <report>modules</report>
+              <report>plugin-management</report>
+              <report>plugins</report>
+              <report>project-team</report>
+              <report>scm</report>
+              <report>summary</report>
+            </reports>
+          </reportSet>
+        </reportSets>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>${dep.plugin.surefire.version}</version>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${dep.plugin.javadoc.version}</version>
+        <configuration>
+          <source>${project.build.targetJdk}</source>
+          <target>${project.build.targetJdk}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <maxmemory>${fb.build.jvmsize}</maxmemory>
+          <additionalparam>-quiet</additionalparam>
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <id>default</id>
+            <reports>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.3</version>
+        <reportSets>
+          <reportSet>
+            <id>default</id>
+            <reports>
+              <report>jxr</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
     </plugins>
   </reporting>
-
-
 
   <!-- The following dependency should be the same everywhere. -->
   <dependencyManagement>
