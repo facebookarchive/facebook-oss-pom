@@ -28,7 +28,7 @@ limitations under the License.
   <groupId>com.facebook</groupId>
   <artifactId>facebook-oss-pom</artifactId>
   <packaging>pom</packaging>
-  <version>2</version>
+  <version>3-SNAPSHOT</version>
   <name>facebook-oss-pom</name>
   <description>Parent POM for Facebook open source java projects that should be distributed through the central Maven repository using oss.sonatype.org</description>
 
@@ -48,7 +48,7 @@ limitations under the License.
     <connection>scm:git:git@github.com/facebook/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com/facebook/${project.artifactId}.git</developerConnection>
     <url>https://git@github.com/facebook/${project.artifactId}</url>
-    <tag>facebook-oss-pom-2</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
