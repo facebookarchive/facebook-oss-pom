@@ -46,15 +46,15 @@ limitations under the License.
 
   <scm>
     <connection>scm:git:git@github.com/facebook/${project.artifactId}.git</connection>
-    <developerConnection>scm:git:git@github.com/facebook/${project.artifactId}.git</developerConnection>
-    <url>https://git@github.com/facebook/${project.artifactId}</url>
+    <developerConnection>scm:git:git@github.com:facebook/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/facebook/${project.artifactId}</url>
     <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
     <site>
       <id>github-project-site</id>
-      <url>https://git@github.com/facebook/${project.artifactId}</url>
+      <url>gitsite:git@github.com/facebook/${project.artifactId}.git</url>
     </site>
   </distributionManagement>
 
