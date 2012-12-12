@@ -51,6 +51,21 @@ limitations under the License.
     <tag>HEAD</tag>
   </scm>
 
+  <!-- ======================================================================== -->
+  <!-- =                                                                      = -->
+  <!-- = Site deployment. These values are correct, to be able to deploy a    = -->
+  <!-- = site, you must add                                                   = -->
+  <!-- =                                                                      = -->
+  <!-- = <server>                                                             = -->
+  <!-- =   <id>github-project-site</id>                                       = -->
+  <!-- =   <username>git</username>                                           = -->
+  <!-- = </server>                                                            = -->
+  <!-- =                                                                      = -->
+  <!-- = to the <servers> section in your local ~/.m2/settings.xml file       = -->
+  <!-- =                                                                      = -->
+  <!-- = Otherwise, site deploy will fail!                                    = -->
+  <!-- =                                                                      = -->
+  <!-- ======================================================================== -->
   <distributionManagement>
     <site>
       <id>github-project-site</id>
