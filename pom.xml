@@ -128,11 +128,11 @@ limitations under the License.
     <fb.main.basedir>${project.basedir}</fb.main.basedir>
 
     <!-- Plugin versions used in multiple places -->
-    <dep.plugin.surefire.version>2.12.4</dep.plugin.surefire.version>
+    <dep.plugin.surefire.version>2.13</dep.plugin.surefire.version>
     <dep.plugin.site.version>3.2</dep.plugin.site.version>
     <dep.plugin.pmd.version>2.7.1</dep.plugin.pmd.version>
     <dep.plugin.findbugs.version>2.5.2</dep.plugin.findbugs.version>
-    <dep.plugin.jacoco.version>0.6.0.201210061924</dep.plugin.jacoco.version>
+    <dep.plugin.jacoco.version>0.6.1.201212231917</dep.plugin.jacoco.version>
     <dep.plugin.scm.version>1.8.1</dep.plugin.scm.version>
     <dep.plugin.javadoc.version>2.9</dep.plugin.javadoc.version>
 
@@ -252,7 +252,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>1.1.1</version>
+          <version>1.2</version>
           <executions>
             <execution>
               <id>default</id>
@@ -301,7 +301,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.5.1</version>
+          <version>2.6</version>
           <configuration>
             <skip>${fb.check.skip-dependency}</skip>
             <failOnWarning>${fb.check.fail-dependency}</failOnWarning>
@@ -324,7 +324,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.5.1</version>
+          <version>3.0</version>
           <configuration>
             <source>${project.build.targetJdk}</source>
             <target>${project.build.targetJdk}</target>
@@ -350,7 +350,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.3</version>
+          <version>2.4</version>
           <configuration>
             <!-- must be true for jar-with-dependencies builds -->
             <appendAssemblyId>true</appendAssemblyId>
@@ -378,7 +378,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.3.2</version>
+          <version>2.4</version>
           <configuration>
             <releaseProfiles>build-javadoc,check-build-basic,check-build-extended,sign-release</releaseProfiles>
             <autoVersionSubmodules>true</autoVersionSubmodules>
@@ -415,7 +415,7 @@ limitations under the License.
         <plugin>
           <groupId>com.github.koraktor</groupId>
           <artifactId>mavanagaiata</artifactId>
-          <version>0.3.4</version>
+          <version>0.4.1</version>
           <configuration>
             <!-- use a grepable timestamp format -->
             <dateFormat>yyyyMMddHHmmssZ</dateFormat>
