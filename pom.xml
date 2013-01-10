@@ -139,7 +139,7 @@ limitations under the License.
     <!-- Dependency versions that should be the same everywhere. -->
     <dep.guice.version>3.0</dep.guice.version>
     <dep.slf4j.version>1.7.2</dep.slf4j.version>
-    <dep.logback.version>1.0.7</dep.logback.version>
+    <dep.logback.version>1.0.9</dep.logback.version>
   </properties>
 
   <prerequisites>
@@ -1010,7 +1010,7 @@ limitations under the License.
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit-dep</artifactId>
-        <version>4.10</version>
+        <version>4.11</version>
       </dependency>
       <dependency>
         <groupId>org.testng</groupId>
