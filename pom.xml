@@ -410,8 +410,8 @@ limitations under the License.
           </executions>
         </plugin>
 
-        <!-- the mavanagaiata plugin provides information from a git build
-             to the generated artifacts -->
+        <!-- the mavanagaiata plugin provides information from a git build -->
+        <!-- to the generated artifacts. -->
         <plugin>
           <groupId>com.github.koraktor</groupId>
           <artifactId>mavanagaiata</artifactId>
@@ -739,10 +739,16 @@ limitations under the License.
         <artifactId>maven-resources-plugin</artifactId>
       </plugin>
 
-      <plugin>
-        <groupId>com.github.koraktor</groupId>
-        <artifactId>mavanagaiata</artifactId>
-      </plugin>
+      <!-- temporarily disable the mavanagataia plugin as       -->
+      <!-- it fails the build if run on a non-git project       -->
+      <!-- See https://github.com/koraktor/mavanagaiata/pull/22 -->
+      <!-- for a proposed fix. Once 0.4.2 is out and the fix    -->
+      <!-- works, this will be re-enabled.                      -->
+
+      <!-- <plugin> -->
+      <!--   <groupId>com.github.koraktor</groupId> -->
+      <!--   <artifactId>mavanagaiata</artifactId> -->
+      <!-- </plugin> -->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
