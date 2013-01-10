@@ -636,7 +636,7 @@ limitations under the License.
               <java>SLASHSTAR_STYLE</java>
             </mapping>
             <properties>
-              <year>${project.inceptionYear}</year>
+              <inceptionYear>${project.inceptionYear}</inceptionYear>
             </properties>
             <headerSections>
               <headerSection>
