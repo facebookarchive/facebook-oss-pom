@@ -102,23 +102,37 @@ limitations under the License.
     <!-- Controls all the checkers run when building the project.            -->
     <!-- Can be activated with -Dfb.check.skip-all=true on the command line. -->
     <fb.check.skip-all>false</fb.check.skip-all>
-    <fb.check.skip-enforcer>${fb.check.skip-all}</fb.check.skip-enforcer>
-    <fb.check.skip-dependency>${fb.check.skip-all}</fb.check.skip-dependency>
-    <fb.check.skip-duplicate-finder>${fb.check.skip-all}</fb.check.skip-duplicate-finder>
-    <fb.check.skip-dependency-version-check>${fb.check.skip-all}</fb.check.skip-dependency-version-check>
-    <fb.check.skip-findbugs>${fb.check.skip-all}</fb.check.skip-findbugs>
-    <fb.check.skip-pmd>${fb.check.skip-all}</fb.check.skip-pmd>
-    <fb.check.skip-license>${fb.check.skip-all}</fb.check.skip-license>
-    <fb.check.skip-jacoco>${fb.check.skip-all}</fb.check.skip-jacoco>
+    <!-- Controls the basic checkers run when building the project.          -->
+    <fb.check.skip-basic>${fb.check.skip-all}</fb.check.skip-basic>
+    <!-- Controls the extended checkers run when building the project.       -->
+    <fb.check.skip-extended>${fb.check.skip-all}</fb.check.skip-extended>
+
+    <!-- basic checks -->
+    <fb.check.skip-enforcer>${fb.check.skip-basic}</fb.check.skip-enforcer>
+    <fb.check.skip-dependency>${fb.check.skip-basic}</fb.check.skip-dependency>
+    <fb.check.skip-duplicate-finder>${fb.check.skip-basic}</fb.check.skip-duplicate-finder>
+    <fb.check.skip-dependency-version-check>${fb.check.skip-basic}</fb.check.skip-dependency-version-check>
+
+    <!-- extended checks -->
+    <fb.check.skip-findbugs>${fb.check.skip-extended}</fb.check.skip-findbugs>
+    <fb.check.skip-pmd>${fb.check.skip-extended}</fb.check.skip-pmd>
+    <fb.check.skip-license>${fb.check.skip-extended}</fb.check.skip-license>
+    <fb.check.skip-jacoco>${fb.check.skip-extended}</fb.check.skip-jacoco>
 
     <fb.check.fail-all>true</fb.check.fail-all>
-    <fb.check.fail-enforcer>${fb.check.fail-all}</fb.check.fail-enforcer>
-    <fb.check.fail-dependency>${fb.check.fail-all}</fb.check.fail-dependency>
-    <fb.check.fail-duplicate-finder>${fb.check.fail-all}</fb.check.fail-duplicate-finder>
-    <fb.check.fail-dependency-version-check>${fb.check.fail-all}</fb.check.fail-dependency-version-check>
-    <fb.check.fail-findbugs>${fb.check.fail-all}</fb.check.fail-findbugs>
-    <fb.check.fail-pmd>${fb.check.fail-all}</fb.check.fail-pmd>
-    <fb.check.fail-license>${fb.check.fail-all}</fb.check.fail-license>
+    <fb.check.fail-basic>${fb.check.fail-all}</fb.check.fail-basic>
+    <fb.check.fail-extended>${fb.check.fail-all}</fb.check.fail-extended>
+
+    <!-- basic checks -->
+    <fb.check.fail-enforcer>${fb.check.fail-basic}</fb.check.fail-enforcer>
+    <fb.check.fail-dependency>${fb.check.fail-basic}</fb.check.fail-dependency>
+    <fb.check.fail-duplicate-finder>${fb.check.fail-basic}</fb.check.fail-duplicate-finder>
+    <fb.check.fail-dependency-version-check>${fb.check.fail-basic}</fb.check.fail-dependency-version-check>
+
+    <!-- extended checks -->
+    <fb.check.fail-findbugs>${fb.check.fail-extended}</fb.check.fail-findbugs>
+    <fb.check.fail-pmd>${fb.check.fail-extended}</fb.check.fail-pmd>
+    <fb.check.fail-license>${fb.check.fail-extended}</fb.check.fail-license>
 
     <!-- the current "best" version of maven -->
     <fb.maven.version>3.0.4</fb.maven.version>
