@@ -394,7 +394,7 @@ limitations under the License.
           <artifactId>maven-release-plugin</artifactId>
           <version>2.4</version>
           <configuration>
-            <releaseProfiles>build-javadoc,check-build-basic,check-build-extended,sign-release</releaseProfiles>
+            <releaseProfiles>build-javadoc,sign-release</releaseProfiles>
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <mavenExecutorId>forked-path</mavenExecutorId>
             <pushChanges>false</pushChanges>
@@ -753,7 +753,7 @@ limitations under the License.
         <artifactId>maven-resources-plugin</artifactId>
       </plugin>
 
-      <!-- temporarily disable the mavanagataia plugin as       -->
+      <!-- temporarily disable the mavanagaiata plugin as       -->
       <!-- it fails the build if run on a non-git project       -->
       <!-- See https://github.com/koraktor/mavanagaiata/pull/22 -->
       <!-- for a proposed fix. Once 0.4.2 is out and the fix    -->
@@ -787,6 +787,46 @@ limitations under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>com.ning.maven.plugins</groupId>
+        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>com.ning.maven.plugins</groupId>
+        <artifactId>maven-duplicate-finder-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
@@ -855,6 +895,45 @@ limitations under the License.
             </reports>
           </reportSet>
         </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>${dep.plugin.pmd.version}</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>pmd</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <targetJdk>${project.build.targetJdk}</targetJdk>
+          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+          <minimumTokens>100</minimumTokens>
+          <excludes>
+            <exclude>**/*Bean.java</exclude>
+            <exclude>**/generated/*.java</exclude>
+          </excludes>
+          <excludeRoots>
+            <excludeRoot>target/generated-sources/stubs</excludeRoot>
+          </excludeRoots>
+          <rulesets>
+            <ruleset>/rulesets/basic.xml</ruleset>
+            <ruleset>/rulesets/clone.xml</ruleset>
+            <ruleset>/rulesets/finalizers.xml</ruleset>
+          </rulesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>${dep.plugin.findbugs.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${dep.plugin.jacoco.version}</version>
       </plugin>
     </plugins>
   </reporting>
@@ -1083,108 +1162,6 @@ limitations under the License.
           </plugin>
         </plugins>
       </build>
-    </profile>
-
-    <!-- This profile runs all the basic checkers. It *should* be activated all the time. -->
-    <profile>
-      <id>check-build-basic</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-enforcer-plugin</artifactId>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-          </plugin>
-
-          <plugin>
-            <groupId>com.ning.maven.plugins</groupId>
-            <artifactId>maven-dependency-versions-check-plugin</artifactId>
-          </plugin>
-
-          <plugin>
-            <groupId>com.ning.maven.plugins</groupId>
-            <artifactId>maven-duplicate-finder-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!-- This profile runs the extended checkers. It will be run when an artifact is deployed so
-         having it activated all the time is probably a good idea.
-    -->
-    <profile>
-      <id>check-build-extended</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-pmd-plugin</artifactId>
-          </plugin>
-
-          <plugin>
-            <groupId>com.mycila.maven-license-plugin</groupId>
-            <artifactId>maven-license-plugin</artifactId>
-          </plugin>
-
-          <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </build>
-
-      <reporting>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-pmd-plugin</artifactId>
-            <version>${dep.plugin.pmd.version}</version>
-            <reportSets>
-              <reportSet>
-                <reports>
-                  <report>pmd</report>
-                </reports>
-              </reportSet>
-            </reportSets>
-            <configuration>
-              <targetJdk>${project.build.targetJdk}</targetJdk>
-              <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-              <minimumTokens>100</minimumTokens>
-              <excludes>
-                <exclude>**/*Bean.java</exclude>
-                <exclude>**/generated/*.java</exclude>
-              </excludes>
-              <excludeRoots>
-                <excludeRoot>target/generated-sources/stubs</excludeRoot>
-              </excludeRoots>
-              <rulesets>
-                <ruleset>/rulesets/basic.xml</ruleset>
-                <ruleset>/rulesets/clone.xml</ruleset>
-                <ruleset>/rulesets/finalizers.xml</ruleset>
-              </rulesets>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-            <version>${dep.plugin.findbugs.version}</version>
-          </plugin>
-          <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>${dep.plugin.jacoco.version}</version>
-          </plugin>
-        </plugins>
-      </reporting>
     </profile>
 
     <!-- Sign artifacts using gpg for oss upload -->
