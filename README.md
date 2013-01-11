@@ -25,9 +25,9 @@ By default, the Facebook OSS POM enforces JDK 1.7. To use another version, add
 
 ### Local setup required!
 
-To fully leverage the deployment options from the Facebook OSS POM, a number of servers need to be configured in the local <tt>~/.m2/settings.xml</tt> file. If these servers are missing, either artifact or site deployment will fail.
+To fully leverage the deployment options from the Facebook OSS POM, a number of servers need to be configured in the local `~/.m2/settings.xml` file. If these servers are missing, either artifact or site deployment will fail.
 
-As described on https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide, the <tt>sonatype-nexus-staging</tt> and <tt>sonatype-nexus-snapshots</tt> repositories should be configured:
+As described on https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide, the `sonatype-nexus-staging` and `sonatype-nexus-snapshots` repositories should be configured:
 
 ```xml
 <servers>
@@ -64,7 +64,7 @@ To support releasing and tagging repositories that are hosted on Github and to a
 </servers>
 ```
 
-The hard-coded username <tt>git</tt> and no password for the github-project-site are a limitation of the deployment tool used for the github site. They must exist in the local settings file.
+The hard-coded username `git` and no password for the github-project-site are a limitation of the deployment tool used for the github site. They must exist in the local settings file.
 
 ## Usage
 
@@ -82,17 +82,17 @@ Add the Facebook OSS POM as the parent to a project:
 
 The following elements should be present in a pom using the Facebook OSS POM as parent:
 
-* <tt>groupId</tt>, <tt>artifactId</tt>, <tt>version</tt>, <tt>packaging</tt>, <tt>name</tt>, <tt>description</tt> and <tt>inceptionYear</tt>
+* `groupId`, `artifactId`, `version`, `packaging`, `name`, `description` and `inceptionYear`
 
   Define the new project. These elements should always be present. If any of those fields are missing from the project,
 the values from the Facebook OSS POM are picked up instead.
 
-* <tt>scm</tt>
+* `scm`
 
-  Defines the SCM location and URL for the project. This is required to use the <tt>release:prepare</tt> and <tt>release:perform</tt> targets
+  Defines the SCM location and URL for the project. This is required to use the `release:prepare` and `release:perform` targets
   to deploy artifacts to Maven Central.
 
-* <tt>organization</tt>, <tt>developers</tt>, <tt>distributionManagement</tt>
+* `organization`, `developers`, `distributionManagement`
 
   Empty elements override the values inherited from the Facebook OSS. 
 
@@ -135,13 +135,13 @@ This is a sample skeleton pom using the Facebook OSS POM:
 
 ## Project POM conventions
 
-In large maven projects, especially with multi-module builds, the pom files can become quite large. In many places, properties defined in the <tt><properties></tt> section of the pom are used. 
+In large maven projects, especially with multi-module builds, the pom files can become quite large. In many places, properties defined in the `<properties>` section of the pom are used. 
 
 To avoid confusion with properties, the following conventions are used in the Facebook OSS POM:
 
-* Properties defined in the POM that influence the build configuration are prefixed with <tt>fb</tt>.
-* Properties that factor out plugin versions (because the plugin is used in multiple places in the POM and the versions should be uniform) start with <tt>dep.plugin</tt> and end with <tt>version</tt>.
-* Properties that factor out dependency versions (to enforce uniform dependency versions across multiple, related dependencies) start with <tt>dep</tt> and end with <tt>version</tt>.
+* Properties defined in the POM that influence the build configuration are prefixed with `fb`.
+* Properties that factor out plugin versions (because the plugin is used in multiple places in the POM and the versions should be uniform) start with `dep.plugin` and end with `version`.
+* Properties that factor out dependency versions (to enforce uniform dependency versions across multiple, related dependencies) start with `dep` and end with `version`.
 
 Examples:
 
@@ -211,50 +211,50 @@ The following switches exist:
   <tr>
     <td>Basic</td>
     <td>Maven Enforcer</td>
-    <td>fb.check.skip-enforcer</td>
-    <td>fb.check.fail-enforcer</td>
+    <td><tt>fb.check.skip-enforcer</tt></td>
+    <td><tt>fb.check.fail-enforcer</tt></td>
   </tr>
   <tr>
     <td>Basic</td>
     <td>Maven Dependencies</td>
-    <td>fb.check.skip-dependency</td>
-    <td>fb.check.fail-dependency</td>
+    <td><tt>fb.check.skip-dependency</tt></td>
+    <td><tt>fb.check.fail-dependency</tt></td>
   </tr>
   <tr>
     <td>Basic</td>
     <td>Maven Dependency version check</td>
-    <td>fb.check.skip-dependency-version-check</td>
-    <td>fb.check.fail-dependency-version-check</td>
+    <td><tt>fb.check.skip-dependency-version-check</tt></td>
+    <td><tt>fb.check.fail-dependency-version-check</tt></td>
   </tr>
   <tr>
     <td>Basic</td>
     <td>Maven Duplicate finder</td>
-    <td>fb.check.skip-duplicate-finder</td>
-    <td>fb.check.fail-duplicate-finder</td>
+    <td><tt>fb.check.skip-duplicate-finder</tt></td>
+    <td><tt>fb.check.fail-duplicate-finder</tt></td>
   </tr>
   <tr>
     <td>Extended</td>
     <td>Findbugs</td>
-    <td>fb.check.skip-findbugs</td>
-    <td>fb.check.fail-findbugs</td>
+    <td><tt>fb.check.skip-findbugs</tt></td>
+    <td><tt>fb.check.fail-findbugs</tt></td>
   </tr>
   <tr>
     <td>Extended</td>
     <td>PMD</td>
-    <td>fb.check.skip-pmd</td>
-    <td>fb.check.fail-pmd</td>
+    <td><tt>fb.check.skip-pmd</tt></td>
+    <td><tt>fb.check.fail-pmd</tt></td>
   </tr>
   <tr>
     <td>Extended</td>
     <td>License check</td>
-    <td>fb.check.skip-license</td>
-    <td>fb.check.fail-license</td>
+    <td><tt>fb.check.skip-license</tt></td>
+    <td><tt>fb.check.fail-license</tt></td>
   </tr>
   <tr>
     <td>Extended</td>
     <td>Code coverage</td>
-    <td>fb.check.skip-jacoco</td>
-    <td>fb.check.fail-jacoco</td>
+    <td><tt>fb.check.skip-jacoco</tt></td>
+    <td><tt>fb.check.fail-jacoco</tt></td>
   </tr>
 </table>
 
@@ -268,18 +268,18 @@ Checks can be turned on and off in groups:
   </tr>
   <tr>
     <td>All Checks</td>
-    <td>fb.check.skip-all</td>
-    <td>fb.check.fail-all</td>
+    <td><tt>fb.check.skip-all</tt></td>
+    <td><tt>fb.check.fail-all</tt></td>
   </tr>
   <tr>
-    <td>Basic checks</td>
-    <td>fb.check.skip-basic</td>
-    <td>fb.check.fail-basic</td>
+    <td>All Basic checks</td>
+    <td><tt>fb.check.skip-basic</tt></td>
+    <td><tt>fb.check.fail-basic</tt></td>
   </tr>
   <tr>
-    <td>Extended Checks</td>
-    <td>fb.check.skip-extended</td>
-    <td>fb.check.fail-extended</td>
+    <td>All Extended Checks</td>
+    <td><tt>fb.check.skip-extended</tt></td>
+    <td><tt>fb.check.fail-extended</tt></td>
   </tr>
 </table>
 
@@ -302,7 +302,7 @@ will skip *all* checks except the duplicate finder.
 
 To ensure that a project has an uniform license header in all source files, the Maven license plugin can be used to check and format license headers.
 
-The plugin expects the license header file as <tt>src/license/LICENSE-HEADER.txt</tt> in the root folder of a project. 
+The plugin expects the license header file as `src/license/LICENSE-HEADER.txt` in the root folder of a project. 
 
 For a multi-module project, this file should exist only once, in the root pom of the project. In all other sub-modules, add
 
@@ -352,83 +352,175 @@ The Enforcer plugin outlaws a number of dependencies that project might use for 
 </table>
 
 
-## Locked dependencies
+## Well known dependencies
 
-The Facebook OSS POM provides a number of dependencies to projects. These dependencies are considered "well known and stable". When a project wants to use any of these dependencies, it can declare them in the project <tt><dependencies></tt> section without a version and automatically pick up a version from the Facebook OSS POM.
+The Facebook OSS POM provides a number of dependencies to projects. These dependencies are considered "well known and stable". When a project wants to use any of these dependencies, it can declare them in the project `<dependencies>` section without a version and automatically pick up a version from the Facebook OSS POM.
 
 The following dependencies are defined:
 
 <table>
-  <tr><th>Dependency name</th><th>Group/Artifact Ids</th></tr>
+  <tr><th>Dependency name</th><th>Group/Artifact Ids</th><th>property</th></tr>
   <tr>
-    <td>Google Guice</td>
-    <td><tt>com.google.inject:guice</tt><p/><tt>com.google.inject.extensions:guice-servlet</tt><p/><tt>com.google.inject.extensions:guice-assistedinject</tt><p/><tt>com.google.inject.extensions:guice-multibindings</tt><p/><tt>com.google.inject.extensions:guice-throwingproviders</tt></td>
+   <td>Google Guice</td>
+   <td><tt>com.google.inject:guice</tt><p/><tt>com.google.inject.extensions:guice-servlet</tt><p/><tt>com.google.inject.extensions:guice-assistedinject</tt><p/><tt>com.google.inject.extensions:guice-multibindings</tt><p/><tt>com.google.inject.extensions:guice-throwingproviders</tt></td>
+   <td><tt>dep.guice.version</tt></td>
   </tr>
   <tr>
    <td>Google Guava</td>
    <td><tt>com.google.guava:guava</tt></td>
+   <td><tt>dep.guava.version</tt></td>
   </tr>
   <tr>
     <td>Joda Time</td>
     <td><tt>joda-time:joda-time</tt></td>
+   <td><tt>dep.joda.version</tt></td>
   </tr>
   <tr>
-    <td>Apache Commons</td>
-    <td><tt>org.apache.commons:commons-lang3</tt><p/><tt>commons-lang:commons-lang</tt><p/><tt>commons-configuration:commons-configuration</tt><p/><tt>commons-codec:commons-codec</tt><p/><tt>commons-collections:commons-collections</tt><p/><tt>commons-io:commons-io</tt><p/><tt>commons-beanutils:commons-beanutils</tt></td>
+    <td>Apache Commons Lang 3</td>
+    <td><tt>org.apache.commons:commons-lang3</tt></td>
+    <td><tt>dep.commons-lang3.version</tt></td>
+  </tr>
+  <tr>
+    <td>Apache Commons Lang</td>
+    <td><tt>commons-lang:commons-lang</tt></td>
+    <td><tt>dep.commons-lang.version</tt></td>
+  </tr>
+  <tr>
+    <td>Apache Commons Configuratio</td>
+    <td><tt>commons-configuration:commons-configuration</tt></td>
+    <td><tt>dep.commons-configuration.version</tt></td>
+  </tr>
+  <tr>
+    <td>Apache Commons Codec</td>
+    <td><tt>commons-codec:commons-codec</tt></td>
+    <td><tt>dep.commons-codec.version</tt></td>
+  </tr>
+  <tr>
+    <td>Apache Commons Collections</td>
+    <td><tt>commons-collections:commons-collections</tt></td>
+    <td><tt>dep.commons-collections.version</tt></td>
+  </tr>
+  <tr>
+    <td>Apache Commons IO</td>
+    <td><tt>commons-io:commons-io</tt></td>
+    <td><tt>dep.commons-io.version</tt></td>
+  </tr>
+  <tr>
+    <td>Apache Commons Beanutils</td>
+    <td><tt>commons-beanutils:commons-beanutils</tt></td>
+    <td><tt>dep.commons-beanutils.version</tt></td>
   </tr>
   <tr>
     <td>Java Inject API</td>
     <td><tt>javax.inject:javax.inject</tt></td>
+    <td><tt>dep.javax-inject.version</tt></td>
   </tr>
   <tr>
     <td>Java Servlet API</td>
     <td><tt>javax.servlet:javax.servlet-api</tt></td>
+    <td><tt>dep.javax-servlet.version</tt></td>
   </tr>
   <tr>
     <td>slf4j (Simple Logging Facade for Java)</td>
     <td><tt>org.slf4j:slf4j-api</tt><p/><tt>org.slf4j:slf4j-jcl</tt><p/><tt>org.slf4j:slf4j-jdk14</tt><p/><tt>org.slf4j:slf4j-log4j12</tt><p/><tt>org.slf4j:slf4j-nop</tt><p/><tt>org.slf4j:slf4j-simple</tt><p/><tt>org.slf4j:slf4j-ext</tt><p/><tt>org.slf4j:jcl-over-slf4j</tt><p/><tt>org.slf4j:jul-to-slf4j</tt><p/><tt>org.slf4j:log4j-over-slf4j</tt></td>
+    <td><tt>dep.slf4j.version</tt></td>
   </tr>
   <tr>
     <td>Logback</td>
     <td><tt>ch.qos.logback:logback-core</tt><p/><tt>ch.qos.logback:logback-classic</tt></td>
+    <td><tt>dep.logback.version</tt></td>
   </tr>
   <tr>
     <td>log4j</td>
     <td><tt>log4j:log4j</tt></td>
+    <td><tt>dep.log4j.version</tt></td>
   </tr>
   <tr>
     <td>Findbugs Annotations</td>
     <td><tt>com.google.code.findbugs:annotations</tt></td>
+    <td><tt>dep.findbugs-annotations.version</tt></td>
   </tr>
   <tr>
     <td>JUnit testing</td>
     <td><tt>junit:junit-dep</tt></td>
+    <td><tt>dep.junit.version</tt></td>
   </tr>
   <tr>
     <td>TestNG testing</td>
     <td><tt>org.testng:testng</tt></td>
+    <td><tt>dep.testng.version</tt></td>
   </tr>
    <tr>
     <td>Easymock Mocking framework</td>
     <td><tt>org.easymock:easymock</tt></td>
+    <td><tt>dep.easymock.version</tt></td>
   </tr>
   <tr>
     <td>Hamcrest matchers</td>
     <td><tt>org.hamcrest:hamcrest-core</tt><p/><tt>org.hamcrest:hamcrest-library</tt></td>
+    <td><tt>dep.hamcrest.version</tt></td>
   </tr>
   <tr>
     <td>Objenesis</td>
     <td><tt>org.objenesis:objenesis</tt></td>
+    <td><tt>dep.objenesis.version</tt></td>
   </tr>
 </table>
+
+### Lock down a well known dependency
+
+It is possible to "lock down" the version of a dependency so that any Facebook OSS POM updates will not affect the version used by the project. 
+Locking a version is done by adding a property to the `<properties>` section of the project POM:
+
+```xml
+  <properties>
+    <!-- change guice version in the Facebook OSS POM. -->
+    <dep.guice.version>2.0</dep.guice.version>
+    ...
+  </properties>
+  ...
+  <dependencies>
+    <dependency>
+      <!-- Use the version from the Facebook OSS POM -->
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+    </dependency>
+    <dependency>
+      <!-- Use the version from the Facebook OSS POM -->
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-multibinder</artifactId>
+    </dependency>
+    ...
+  </dependency>
+```
+
+to the project POM. This will lock the version of a dependency to the version desired. This can also be used to force a version update to a dependency.
+
+```xml
+  <properties>
+    <!-- change log4j version in the Facebook OSS POM. -->
+    <dep.log4j.version>1.2.18-SNAPSHOT</dep.log4j.version>
+    ...
+  </properties>
+  ...
+  <dependencies>
+    <dependency>
+      <!-- Use the version from the Facebook OSS POM -->
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+    </dependency>
+    ...
+  </dependency>
+```
+
 
 ## Site deployment to Github
 
 The Facebook OSS POM supports deployment of the maven generated site to Github. See http://khuxtable.github.com/wagon-gitsite/ for more information.
 
-For a first time deployment, it is necessary to generate the <tt>gh-pages</tt> branch as described on Github at https://help.github.com/articles/creating-project-pages-manually.
+For a first time deployment, it is necessary to generate the `gh-pages` branch as described on Github at https://help.github.com/articles/creating-project-pages-manually.
 
-For site deployment, the github user and github project site must be configured in the local <tt>~/.m2/settings.xml</tt> file!
+For site deployment, the github user and github project site must be configured in the local `~/.m2/settings.xml` file!
 
 ```xml
 <servers>
@@ -446,4 +538,4 @@ For site deployment, the github user and github project site must be configured 
 </servers>
 ```
 
-The hard-coded username <tt>git</tt> and no password for the github-project-site are a limitation of the deployment tool used for the github site.
+The hard-coded username `git` and no password for the github-project-site are a limitation of the deployment tool used for the github site.
