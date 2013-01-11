@@ -417,6 +417,7 @@ limitations under the License.
             <mavenExecutorId>forked-path</mavenExecutorId>
             <pushChanges>false</pushChanges>
             <localCheckout>true</localCheckout>
+            <goals>deploy</goals>
           </configuration>
         </plugin>
 
