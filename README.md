@@ -359,81 +359,66 @@ The Facebook OSS POM provides a number of dependencies to projects. These depend
 The following dependencies are defined:
 
 <table>
-  <tr><th>Dependency name</th><th>Group Ids</th><th>Artifact Ids</th></tr>
+  <tr><th>Dependency name</th><th>Group/Artifact Ids</th></tr>
   <tr>
     <td>Google Guice</td>
-    <td><tt>com.google.inject, com.google.inject.extensions</tt></td>
-    <td><tt>guice, guice-servlet, guice-assistedinject, guice-multibindings, guice-throwingproviders</tt></td>
+    <td><tt>com.google.inject:guice</tt><p/><tt>com.google.inject.extensions:guice-servlet</tt><p/><tt>com.google.inject.extensions:guice-assistedinject</tt><p/><tt>com.google.inject.extensions:guice-multibindings</tt><p/><tt>com.google.inject.extensions:guice-throwingproviders</tt></td>
   </tr>
   <tr>
    <td>Google Guava</td>
-   <td><tt>com.google.guava</tt></td>
-   <td><tt>guava</tt></td>
+   <td><tt>com.google.guava:guava</tt></td>
   </tr>
   <tr>
     <td>Joda Time</td>
-    <td><tt>joda-time</tt></td>
-    <td><tt>joda-time</tt></td>
+    <td><tt>joda-time:joda-time</tt></td>
   </tr>
   <tr>
     <td>Apache Commons</td>
-    <td><tt>org.apache.commons, commons-lang, commons-configuration, commons-codec, commons-collections, commons-io, commons-beanutils</tt></td>
-    <td><tt>commons-lang3, commons-lang, commons-configuration, commons-codec, commons-collections, commons-io, commons-beanutils</tt></td>
+    <td><tt>org.apache.commons:commons-lang3</tt><p/><tt>commons-lang:commons-lang</tt><p/><tt>commons-configuration:commons-configuration</tt><p/><tt>commons-codec:commons-codec</tt><p/><tt>commons-collections:commons-collections</tt><p/><tt>commons-io:commons-io</tt><p/><tt>commons-beanutils:commons-beanutils</tt></td>
   </tr>
   <tr>
     <td>Java Inject API</td>
-    <td><tt>javax.inject</tt></td>
-    <td><tt>javax.inject</tt></td>
+    <td><tt>javax.inject:javax.inject</tt></td>
   </tr>
   <tr>
     <td>Java Servlet API</td>
-    <td><tt>javax.servlet</tt></td>
-    <td><tt>javax.servlet-api</tt></td>
+    <td><tt>javax.servlet:javax.servlet-api</tt></td>
   </tr>
   <tr>
     <td>slf4j (Simple Logging Facade for Java)</td>
-    <td><tt>org.slf4j</tt></td>
-    <td><tt>slf4j-api, slf4j-jcl, slf4j-jdk14, slf4j-log4j12, slf4j-nop, slf4j-simple, slf4j-ext, jcl-over-slf4j, jul-to-slf4j, log4j-over-slf4j</tt></td>
+    <td><tt>org.slf4j:slf4j-api</tt><p/><tt>org.slf4j:slf4j-jcl</tt><p/><tt>org.slf4j:slf4j-jdk14</tt><p/><tt>org.slf4j:slf4j-log4j12</tt><p/><tt>org.slf4j:slf4j-nop</tt><p/><tt>org.slf4j:slf4j-simple</tt><p/><tt>org.slf4j:slf4j-ext</tt><p/><tt>org.slf4j:jcl-over-slf4j</tt><p/><tt>org.slf4j:jul-to-slf4j</tt><p/><tt>org.slf4j:log4j-over-slf4j</tt></td>
   </tr>
   <tr>
     <td>Logback</td>
-    <td><tt>ch.qos.logback</tt></td>
-    <td><tt>logback-core, logback-classic</tt></td>
+    <td><tt>ch.qos.logback:logback-core</tt><p/><tt>ch.qos.logback:logback-classic</tt></td>
   </tr>
   <tr>
     <td>log4j</td>
-    <td><tt>log4j</tt></td>
-    <td><tt>log4j</tt></td>
+    <td><tt>log4j:log4j</tt></td>
   </tr>
   <tr>
     <td>Findbugs Annotations</td>
-    <td><tt>com.google.code.findbugs</tt></td>
-    <td><tt>annotations</tt></td>
+    <td><tt>com.google.code.findbugs:annotations</tt></td>
   </tr>
   <tr>
     <td>JUnit testing</td>
-    <td><tt>junit</tt></td>
-    <td><tt>junit-dep</tt></td>
+    <td><tt>junit:junit-dep</tt></td>
   </tr>
   <tr>
     <td>TestNG testing</td>
-    <td><tt>org.testng</tt></td>
-    <td><tt>testng</tt></td>
+    <td><tt>org.testng:testng</tt></td>
   </tr>
    <tr>
     <td>Easymock Mocking framework</td>
-    <td><tt>org.easymock</tt></td>
-    <td><tt>easymock</tt></td>
+    <td><tt>org.easymock:easymock</tt></td>
   </tr>
   <tr>
     <td>Hamcrest matchers</td>
-    <td><tt>org.hamcrest</tt></td>
-    <td><tt>hamcrest-core, hamcrest-library</tt></td>
+    <td><tt>org.hamcrest:hamcrest-core</tt><p/><tt>org.hamcrest:hamcrest-library</tt></td>
   </tr>
   <tr>
     <td>Objenesis</td>
-    <td><tt>org.objenesis</tt></td>
-    <td><tt>objenesis</tt></td>
+    <td><tt>org.objenesis:objenesis</tt></td>
   </tr>
 </table>
 
