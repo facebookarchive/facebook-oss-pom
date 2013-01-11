@@ -1,5 +1,9 @@
 # Changes
 
+## Version 5-SNAPSHOT
+* 2013-01-11 - Automatic push of release related file and tags can be configured.
+* 2013-01-11 - Updated documentation.
+
 ## Version 4
 
 * 2013-01-11 - Released

@@ -99,6 +99,10 @@ limitations under the License.
     <!-- Default jvm size for compiler, tests etc. -->
     <fb.build.jvmsize>1024m</fb.build.jvmsize>
 
+    <!-- whether a release:perform automatically pushes the created files and tags to -->
+    <!-- the upstream repository. -->
+    <fb.release.push-changes>true</fb.release.push-changes>
+
     <!-- Controls all the checkers run when building the project.            -->
     <!-- Can be activated with -Dfb.check.skip-all=true on the command line. -->
     <fb.check.skip-all>false</fb.check.skip-all>
@@ -415,7 +419,7 @@ limitations under the License.
             <releaseProfiles>build-javadoc,sign-release</releaseProfiles>
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <mavenExecutorId>forked-path</mavenExecutorId>
-            <pushChanges>false</pushChanges>
+            <pushChanges>${fb.release.push-changes}</pushChanges>
             <localCheckout>true</localCheckout>
             <goals>deploy</goals>
           </configuration>

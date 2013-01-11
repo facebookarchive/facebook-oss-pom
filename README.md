@@ -539,3 +539,33 @@ For site deployment, the github user and github project site must be configured 
 ```
 
 The hard-coded username `git` and no password for the github-project-site are a limitation of the deployment tool used for the github site.
+
+## Other properties
+
+These are default properties that affect some aspects of the build. All of them can be overriden in the `<properties>` section of the project pom.
+
+### fb.build.jvmsize
+
+Sets the default heap size for the compiler, javadoc generation and other plugins. Default is 1024M.
+
+### fb.release.push-changes
+
+When a project creates a release using the maven-release-plugin and `mvn release:prepare`, this switch controls whether the generated tags, modified POM files etc. are pushed automatically to the upstream repository or not. Default is `true` (push the changes).
+
+### fb.maven.version
+
+The minimum version of Maven to build a project. Default is "3.0.4".
+
+### fb.main.basedir
+
+The 'root' directory of a project. For a simple project, this is identical to `project.basedir`. In a multi-module build, it should point at the root project.
+
+For a multi-module project, all other sub-modules must have this explicitly set to the root directory and therefore the following code
+
+```xml
+<properties>
+  <fb.main.basedir>${project.parent.basedir}</fb.main.basedir>
+</properties>
+```
+must be added to each pom. This is a limitation of the Maven multi-module build process (see http://stackoverflow.com/questions/1012402/maven2-property-that-indicates-the-parent-directory for details).
+
