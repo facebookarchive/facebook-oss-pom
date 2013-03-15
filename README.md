@@ -550,7 +550,7 @@ Sets the default heap size for the compiler, javadoc generation and other plugin
 
 ### fb.release.push-changes
 
-When a project creates a release using the maven-release-plugin and `mvn release:prepare`, this switch controls whether the generated tags, modified POM files etc. are pushed automatically to the upstream repository or not. Default is `true` (push the changes).
+When a project creates a release using the maven-release-plugin and `mvn release:prepare`, this switch controls whether the generated tags, modified POM files etc. are pushed automatically to the upstream repository or not. Default is `false` (do not push the changes).
 
 ### fb.maven.version
 
