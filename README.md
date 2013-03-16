@@ -426,6 +426,22 @@ The following dependencies are defined:
     <td><tt>dep.slf4j.version</tt></td>
   </tr>
   <tr>
+    <td>Yammer Metrics</td>
+    <td><tt>com.yammer.metrics:metrics-core</tt>
+      <p/><tt>com.yammer.metrics:metrics-annotation</tt>
+      <p/><tt>com.yammer.metrics:metrics-ehcache</tt>
+      <p/><tt>com.yammer.metrics:metrics-ganglia</tt>
+      <p/><tt>com.yammer.metrics:metrics-graphite</tt>
+      <p/><tt>com.yammer.metrics:metrics-guice</tt>
+      <p/><tt>com.yammer.metrics:metrics-jersey</tt>
+      <p/><tt>com.yammer.metrics:metrics-jetty</tt>
+      <p/><tt>com.yammer.metrics:metrics-jdbi</tt><p/>
+      <p/><tt>com.yammer.metrics:metrics-logback</tt><p/>
+      <p/><tt>com.yammer.metrics:metrics-log4j</tt><p/>
+      <p/><tt>com.yammer.metrics:metrics-servlet</tt><p/>
+      <p/><tt>com.yammer.metrics:metrics-spring</tt><p/>
+    <td><tt>dep.yammer-metrics.version</tt></td>
+  <tr>
     <td>Logback</td>
     <td><tt>ch.qos.logback:logback-core</tt><p/><tt>ch.qos.logback:logback-classic</tt></td>
     <td><tt>dep.logback.version</tt></td>
