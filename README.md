@@ -435,11 +435,12 @@ The following dependencies are defined:
       <p/><tt>com.yammer.metrics:metrics-guice</tt>
       <p/><tt>com.yammer.metrics:metrics-jersey</tt>
       <p/><tt>com.yammer.metrics:metrics-jetty</tt>
-      <p/><tt>com.yammer.metrics:metrics-jdbi</tt><p/>
-      <p/><tt>com.yammer.metrics:metrics-logback</tt><p/>
-      <p/><tt>com.yammer.metrics:metrics-log4j</tt><p/>
-      <p/><tt>com.yammer.metrics:metrics-servlet</tt><p/>
-      <p/><tt>com.yammer.metrics:metrics-spring</tt><p/>
+      <p/><tt>com.yammer.metrics:metrics-jdbi</tt>
+      <p/><tt>com.yammer.metrics:metrics-logback</tt>
+      <p/><tt>com.yammer.metrics:metrics-log4j</tt>
+      <p/><tt>com.yammer.metrics:metrics-servlet</tt>
+      <p/><tt>com.yammer.metrics:metrics-spring</tt>
+    </td>
     <td><tt>dep.yammer-metrics.version</tt></td>
   <tr>
     <td>Logback</td>
