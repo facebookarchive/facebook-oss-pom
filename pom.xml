@@ -174,6 +174,7 @@ limitations under the License.
     <dep.commons-io.version>2.4</dep.commons-io.version>
     <dep.commons-beanutils.version>1.8.3</dep.commons-beanutils.version>
     <dep.findbugs-annotations.version>2.0.1</dep.findbugs-annotations.version>
+    <dep.yammer-metrics.version>2.2.0</dep.yammer-metrics.version>
     <dep.junit.version>4.11</dep.junit.version>
     <dep.testng.version>6.8</dep.testng.version>
     <dep.easymock.version>3.1</dep.easymock.version>
@@ -1154,6 +1155,73 @@ limitations under the License.
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
         <version>${dep.findbugs-annotations.version}</version>
+      </dependency>
+
+      <!-- yammer metrics -->
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-annotation</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-core</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-ehcache</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-ganglia</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-graphite</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-guice</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-jersey</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-jetty</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-jdbi</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-logback</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-log4j</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-servlet</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yammer.metrics</groupId>
+        <artifactId>metrics-spring</artifactId>
+        <version>${dep.yammer-metrics.version}</version>
       </dependency>
 
       <!-- Testing -->
