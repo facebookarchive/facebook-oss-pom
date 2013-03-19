@@ -9,7 +9,7 @@
 * 2013-03-13 - Downgrade release plugin to 2.3.2 from 2.4 to fix git local checkout regression
 * 2013-03-13 - Upgrade mavanagaiata plugin to 0.5.0 (from 0.4.1)
 * 2013-03-13 - Upgrade maven-duplicate-finder-plugin to 1.0.4 (from 1.0.3)
-* 2013-03-13 - Update guava dependency version to 14.0 (from 13.0.1)
+* 2013-03-13 - Update guava dependency version to 14.0.1 (from 13.0.1)
 * 2013-03-13 - Update objenesis version to 1.3 (from 1.2)
 * 2013-03-13 - add build helper plugin 1.7
 * 2013-03-13 - reactivate mavanagaiata plugin
