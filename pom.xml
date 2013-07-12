@@ -242,20 +242,6 @@ limitations under the License.
                     <ignore />
                   </action>
                 </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>com.github.koraktor</groupId>
-                    <artifactId>mavanagaiata</artifactId>
-                    <versionRange>[0,)</versionRange>
-                    <goals>
-                      <goal>commit</goal>
-                      <goal>branch</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore />
-                  </action>
-                </pluginExecution>
               </pluginExecutions>
             </lifecycleMappingMetadata>
           </configuration>
@@ -466,30 +452,6 @@ limitations under the License.
           </executions>
         </plugin>
 
-        <!-- the mavanagaiata plugin provides information from a git build -->
-        <!-- to the generated artifacts. -->
-        <plugin>
-          <groupId>com.github.koraktor</groupId>
-          <artifactId>mavanagaiata</artifactId>
-          <version>0.5.0</version>
-          <configuration>
-            <!-- use a grepable timestamp format -->
-            <dateFormat>yyyyMMddHHmmssZ</dateFormat>
-            <!-- don't run the plugin if no git repo is present -->
-            <skipNoGit>true</skipNoGit>
-          </configuration>
-          <executions>
-            <execution>
-              <id>default</id>
-              <phase>validate</phase>
-              <goals>
-                <goal>commit</goal>
-                <goal>branch</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
         <!-- Always build a jar with the test classes -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -514,13 +476,6 @@ limitations under the License.
                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                 <addClasspath>false</addClasspath>
               </manifest>
-              <manifestEntries>
-                <!-- override Implementation-Version to include git commit info -->
-                <!-- (requires mavanagaiata plugin) -->
-                <Implementation-Version>
-                  ${project.version}-${mvngit.commit.id}-${mvngit.branch}-${mvngit.commit.committer.date}
-                </Implementation-Version>
-              </manifestEntries>
             </archive>
           </configuration>
         </plugin>
@@ -806,11 +761,6 @@ limitations under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-      </plugin>
-
-      <plugin>
-        <groupId>com.github.koraktor</groupId>
-        <artifactId>mavanagaiata</artifactId>
       </plugin>
 
       <plugin>
