@@ -1,5 +1,21 @@
 # Changes
 
+## Version 6 (in progress)
+
+* 2013-07-02 - remove mavanagaiata plugin, not really usable in its current state.
+* 2013-07-12 - Require maven 3.0.5 to build
+* 2013-07-12 - Upgrade compiler plugin to 3.1 (from 3.0)
+* 2013-07-12 - Upgrade dependency plugin to 2.8 (from 2.7)
+* 2013-07-12 - Upgrade enforcer plugin to 1.3 (from 1.2)
+* 2013-07-12 - Upgrade javadoc plugin to 2.9.1 (from 2.9)
+* 2013-07-12 - Upgrade project-info-reports plugin to 2.7 (from 2.6)
+* 2013-07-12 - Upgrade release plugin to 2.4.1 (from 2.3.2)
+* 2013-07-12 - Upgrade site plugin to 3.3 (from 3.2)
+* 2013-07-12 - Upgrade surefire plugin to 2.15 (from 2.14)
+* 2013-07-12 - Upgrade build-helper plugin to 1.8 (from 1.7)
+* 2013-07-12 - Upgrade jacoco plugin to 0.6.3 (from 0.6.2)
+
+
 ## Version 5
 
 * 2013-03-13 - Upgrade surefire plugin to 2.14 (from 2.13)
