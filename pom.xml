@@ -307,7 +307,7 @@ limitations under the License.
                   <exclude>cglib:cglib</exclude>
                   <!-- junit repackages hamcrest into its own jar, which is a big no-no.
                        junit-dep fixes this problem -->
-                  <exclude>junit:junit</exclude>
+                  <exclude>junit:junit:[,4.11)</exclude>
                   <!-- use guava -->
                   <exclude>com.google.collections:google-collections</exclude>
                   <!-- but not the badly numbered ones... -->
