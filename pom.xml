@@ -1113,6 +1113,11 @@ limitations under the License.
         <version>${dep.junit.version}</version>
       </dependency>
       <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${dep.junit.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
         <version>${dep.testng.version}</version>

@@ -2,6 +2,7 @@
 
 ## Version 6 (in progress)
 
+* 2013-07-15 - re-enable junit:junit with versions >= 4.11 (they fixed the deps)
 * 2013-07-02 - remove mavanagaiata plugin, not really usable in its current state.
 * 2013-07-12 - Require maven 3.0.5 to build
 * 2013-07-12 - Upgrade compiler plugin to 3.1 (from 3.0)
