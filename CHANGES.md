@@ -1,6 +1,22 @@
 # Changes
 
-## Version 6 (in progress)
+## Version 7 (in progress)
+
+* 2013-08-14 - Add mockito dependency (1.9.5)
+* 2013-08-14 - Upgrade enforcer plugin to 1.3.1 (from 1.3)
+* 2013-08-14 - Change from com.mycila.maven-license-plugin:maven-license-plugin:1.10.b1
+               to com.mycila:license-maven-plugin:2.2
+* 2013-08-14 - add *.proto and *.vm to list of excluded files for licenses
+* 2013-08-14 - Upgrade commons-codec dependency to 1.8 (from 1.7)
+* 2013-08-14 - Upgrade logback dependency to 1.0.13 (from 1.0.9)
+* 2013-08-14 - Upgrade javax.servlet dependency to 3.1.0 (from 3.0.1)
+* 2013-08-14 - Upgrade joda-time dependency to 2.2 (from 2.1)
+* 2013-08-14 - Upgrade easymock dependency to 3.2 (from 3.1)
+* 2013-08-14 - Upgrade slf4j dependency to 1.7.2 (from 1.7.5)
+* 2013-08-14 - Upgrade testng dependency to 6.8.5 (from 6.8)
+
+
+## Version 6
 
 * 2013-07-16 - move file encoding in surefire onto the argline.
 * 2013-07-15 - re-enable junit:junit with versions >= 4.11 (they fixed the deps)
