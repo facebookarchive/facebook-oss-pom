@@ -2,6 +2,7 @@
 
 ## Version 7 (in progress)
 
+* 2013-08-14 - Also exclude the various org.mortbay.jetty:servlet* deps
 * 2013-08-14 - Add mockito dependency (1.9.5)
 * 2013-08-14 - Upgrade enforcer plugin to 1.3.1 (from 1.3)
 * 2013-08-14 - Change from com.mycila.maven-license-plugin:maven-license-plugin:1.10.b1
