@@ -1,6 +1,8 @@
 # Changes
 
-## Version 7 (in progress)
+## Version 8(in progress)
+
+## Version 7
 
 * 2013-08-14 - Also exclude the various org.mortbay.jetty:servlet* deps
 * 2013-08-14 - Add mockito dependency (1.9.5)
