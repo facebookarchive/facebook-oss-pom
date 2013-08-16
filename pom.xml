@@ -824,8 +824,8 @@ limitations under the License.
       </plugin>
 
       <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
+          <groupId>com.mycila</groupId>
+          <artifactId>license-maven-plugin</artifactId>
       </plugin>
 
       <plugin>
