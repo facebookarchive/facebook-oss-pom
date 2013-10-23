@@ -1,6 +1,15 @@
 # Changes
 
-## Version 8(in progress)
+## Version 8
+
+* 2013-10-23 - Revert javax.servlet dependency back to 3.0.1 (from 3.1.0)
+* 2013-10-23 - Upgrade findbugs-annotations dependency to 2.0.2 (from 2.0.1)
+* 2013-10-23 - Upgrade testng dependency to 6.8.7 (from 6.8.5)
+* 2013-10-23 - Upgrade objenesis dependency to 2.1 (easymock needs 2.x) (from 1.3)
+- 2013-10-23 - Upgrade jodatime to 2.3 (from 2.2)
+* 2013-10-23 - Upgrade surefire plugin to 2.16 (from 2.15)
+* 2013-10-23 - Upgrade install plugin to 2.5 (from 2.4)
+
 
 ## Version 7
 
