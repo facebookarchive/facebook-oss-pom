@@ -1,5 +1,11 @@
 # Changes
 
+## Version 9
+
+* 2013-10-28 - enforce PMD 5.0.5 in the PMD plugin
+* 2013-10-28 - only fail PMD on level 4 and higher
+* 2013-10-28 - enforce findbugs 2.0.2 in the findbugs plugin
+
 ## Version 8
 
 * 2013-10-23 - Revert javax.servlet dependency back to 3.0.1 (from 3.1.0)
