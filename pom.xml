@@ -406,7 +406,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${dep.plugin.surefire.version}</version>
           <configuration>
-            <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
+            <argLine>${argLine} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
             <systemPropertyVariables>
               <sun.jnu.encoding>${project.build.sourceEncoding}</sun.jnu.encoding>
               <user.timezone>UTC</user.timezone>
