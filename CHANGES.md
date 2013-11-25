@@ -2,9 +2,23 @@
 
 ## Version 9
 
-* 2013-10-28 - enforce PMD 5.0.5 in the PMD plugin
-* 2013-10-28 - only fail PMD on level 4 and higher
-* 2013-10-28 - enforce findbugs 2.0.2 in the findbugs plugin
+* 2013-11-27 - Remove dep.findbugs-annotations.version, use dep.findbugs.version instead.
+* 2013-11-25 - Remove all PMD rulesets except braces, PMD turns out to
+               be more and more annyoing; rules need to be actively
+               curated.
+               See https://github.com/kitei/kitei-rules/blob/master/src/main/resources/pmd/kitei-standard.xml
+               for an example
+* 2013-11-25 - Upgrade commons-configuration dependency to 1.10 (from 1.9)
+* 2013-11-25 - Upgrade maven-duplicate-finder-plugin plugin to 1.0.5 (from 1.0.4)
+* 2013-11-25 - Upgrade findbugs plugin to 2.5.3 (from 2.5.2)
+* 2013-11-25 - Upgrade deploy plugin to 2.8.1 (from 2.7)
+* 2013-11-25 - Upgrade install plugin to 2.5.1 (from 2.5)
+* 2013-11-25 - Upgrade release plugin to 2.4.2 (from 2.4.1)
+* 2013-11-25 - Upgrade license plugin to 2.5 (from 2.2)
+* 2013-11-25 - Enforce findbugs 2.0.2 in the findbugs plugin
+* 2013-10-31 - Fix surefire argline to work with code coverage
+* 2013-10-28 - Enforce PMD 5.0.5 in the PMD plugin
+* 2013-10-28 - Only fail PMD on level 4 and higher
 
 ## Version 8
 
