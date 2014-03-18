@@ -184,6 +184,7 @@
     <dep.hamcrest.version>1.3</dep.hamcrest.version>
     <dep.mockito.version>1.9.5</dep.mockito.version>
     <dep.objenesis.version>2.1</dep.objenesis.version>
+    <dep.airlift.version>0.86</dep.airlift.version>
   </properties>
 
   <prerequisites>
@@ -1122,6 +1123,118 @@
         <groupId>commons-beanutils</groupId>
         <artifactId>commons-beanutils</artifactId>
         <version>${dep.commons-beanutils.version}</version>
+      </dependency>
+
+      <!-- Airlift components -->
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>configuration</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>concurrent</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>dbpool</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>discovery</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>event</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>http-client</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>http-server</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>jaxrs</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>jmx-http-rpc</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>jmx-http</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>jmx</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>json</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>launcher</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>log</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>log-manager</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>node</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>packaging</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>stats</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>testing</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>trace-token</artifactId>
+        <version>${dep.airlift.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.airlift</groupId>
+        <artifactId>units</artifactId>
+        <version>${dep.airlift.version}</version>
       </dependency>
 
       <!-- findbugs -->
