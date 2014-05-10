@@ -12,7 +12,7 @@ It is possible to use the base pom in a new project without any additional chang
 
 ## Preliminaries
 
-The Facebook OSS POM enforces Maven 3.0.4 or later. The reason for this is http://jira.codehaus.org/browse/MNG-5121 which has only been resolved in version 3.0.4.
+The Facebook OSS POM enforces a minimum version of Maven due to various bugs found in earlier versions.
 
 By default, the Facebook OSS POM enforces JDK 1.7. To use another version, add
 
@@ -554,7 +554,7 @@ When a project creates a release using the maven-release-plugin and `mvn release
 
 ### fb.maven.version
 
-The minimum version of Maven to build a project. Default is "3.0.4".
+The minimum version of Maven to build a project.
 
 ### fb.main.basedir
 
