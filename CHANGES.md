@@ -1,5 +1,14 @@
 # Changes
 
+## Version 11
+
+* 2014-05-09 - Require Maven 3.1.1
+* 2014-05-09 - Upgrade release plugin to 2.5.0 (from 2.4.2)
+
+## Version 10
+
+* 2014-02-20 - Upgrade guava to 16.0.1 (from 15.0)
+
 ## Version 9
 
 * 2013-11-27 - Remove dep.findbugs-annotations.version, use dep.findbugs.version instead.
