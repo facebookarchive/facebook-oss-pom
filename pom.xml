@@ -266,6 +266,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.1</version>
+          <configuration>
+            <!-- Don't deploy any part of a multimodule project unless tests
+                 and checks for all previous phases have succeeded -->
+            <deployAtEnd>true</deployAtEnd>
+          </configuration>
         </plugin>
 
         <plugin>
@@ -278,6 +283,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.1</version>
+          <configuration>
+            <!-- Don't install any part of a multimodule project unless tests
+                 and checks for all previous phases have succeeded -->
+            <installAtEnd>true</installAtEnd>
+          </configuration>
         </plugin>
 
         <plugin>
