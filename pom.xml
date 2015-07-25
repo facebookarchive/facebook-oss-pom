@@ -458,6 +458,7 @@
             <encoding>${project.build.sourceEncoding}</encoding>
             <maxmemory>${fb.build.jvmsize}</maxmemory>
             <additionalparam>-quiet</additionalparam>
+            <additionalparam>-Xdoclint:none</additionalparam>
           </configuration>
           <executions>
             <execution>
