@@ -124,6 +124,7 @@
     <fb.check.skip-findbugs>${fb.check.skip-extended}</fb.check.skip-findbugs>
     <fb.check.skip-pmd>${fb.check.skip-extended}</fb.check.skip-pmd>
     <fb.check.skip-license>${fb.check.skip-extended}</fb.check.skip-license>
+    <fb.check.skip-existing-license>${fb.check.skip-extended}</fb.check.skip-existing-license>
     <fb.check.skip-jacoco>${fb.check.skip-extended}</fb.check.skip-jacoco>
 
     <fb.check.fail-all>true</fb.check.fail-all>
@@ -685,7 +686,7 @@
           <version>2.5</version>
           <configuration>
             <skip>${fb.check.skip-license}</skip>
-            <skipExistingHeaders>true</skipExistingHeaders>
+            <skipExistingHeaders>${fb.check.skip-existing-license}</skipExistingHeaders>
             <failIfMissing>${fb.check.fail-license}</failIfMissing>
             <header>${fb.main.basedir}/src/license/LICENSE-HEADER.txt</header>
             <mapping>
